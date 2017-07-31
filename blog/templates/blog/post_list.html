@@ -4,14 +4,32 @@
     </head>
 
     <body>
-           <div>
+      <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+           <!-- <div>
                <h1><a href="">Django Girls Blog</a></h1>
            </div>
 
-           <div>
+{{ posts }}
+
+<QuerySet [<Post: My second post>, <Post: My first post>]> -->
+
+  {% for post in posts %}
+    {{ post }}
+{% endfor %}
+           <!-- <div>
                <h2><a href="">My First Post</a></h2>
                <p>Published: July 31st, 2017</p>
-               
+
                <p>Hello!</p>
                <p> My name is Aileen Park and I am a rising junior at a high school on Long Island. </p>
            </div>
@@ -24,7 +42,7 @@
                <p> Girls Who Code is a seven week summer immersion program that is hosted at different locations. </p>
                <p> My program is being hosted at the Microsoft Technology Center.</p>
                <p> I've learned so much here about coding, web development, teamwork, and more. </p>
-           </div>
+           </div> -->
    </body>
 
 </html>
