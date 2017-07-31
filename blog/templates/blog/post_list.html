@@ -1,6 +1,10 @@
+{% load staticfiles %}
 <html>
     <head>
         <title>Aileen's Blog</title>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Swanky+and+Moo+Moo" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
 
     <body>
@@ -9,7 +13,7 @@
 </div>
 
 {% for post in posts %}
-    <div>
+    <div class="post">
         <p>published: {{ post.published_date }}</p>
         <h1><a href="">{{ post.title }}</a></h1>
         <p>{{ post.text|linebreaksbr }}</p>
@@ -22,10 +26,6 @@
 {{ posts }}
 
 <QuerySet [<Post: My second post>, <Post: My first post>]> -->
-
-  {% for post in posts %}
-    {{ post }}
-{% endfor %}
            <!-- <div>
                <h2><a href="">My First Post</a></h2>
                <p>Published: July 31st, 2017</p>
